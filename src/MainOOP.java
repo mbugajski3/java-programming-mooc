@@ -1,10 +1,12 @@
 public class MainOOP {
     public static void main (String[] args) {
-        Account michalAccount = new Account("Michal's account", 100.0);
+        Account matthewsAccount = new Account("Matthews account", 1000.00);
+        Account myAccount = new Account("My account", 0.0);
 
-        michalAccount.deposit(20.0);
+        matthewsAccount.withdraw(100.0);
+        myAccount.deposit(100.0);
 
-        System.out.println("The balance of Michal's account is now: " + michalAccount.balance());
-
+        System.out.println(matthewsAccount);
+        System.out.println(myAccount);
     }
 }
