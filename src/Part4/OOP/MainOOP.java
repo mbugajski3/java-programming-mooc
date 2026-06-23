@@ -2,14 +2,19 @@ package Part4.OOP;
 
 public class MainOOP {
     public static void main (String[] args) {
-        DecreasingCounter counter = new DecreasingCounter(100);
+        Debt mortgage = new Debt(120000.0, 1.20);
+        mortgage.printBalance();
 
-        counter.printValue();
+        mortgage.waitOneYear();
+        mortgage.printBalance();
 
-        counter.reset();
-        counter.printValue();
+        int years = 0;
 
-        counter.decrement();
-        counter.printValue();
+        while (years < 20) {
+            mortgage.waitOneYear();
+            years = years + 1;
+        }
+
+        mortgage.printBalance();
     }
 }
