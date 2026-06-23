@@ -2,12 +2,14 @@ package Part4.OOP;
 
 public class MainOOP {
     public static void main (String[] args) {
-        Agent bond = new Agent("James", "Bond");
+        Multiplier multiplyByThree = new Multiplier(3);
 
-        bond.toString(); // prints nothing
-        System.out.println(bond);
+        System.out.println("multiplyByThree.multiply(2): " + multiplyByThree.multiply(2));
 
-        Agent ionic = new Agent("Ionic", "Bond");
-        System.out.println(ionic);
+        Multiplier multiplyByFour = new Multiplier(4);
+
+        System.out.println("multiplyByFour.multiply(2): " + multiplyByFour.multiply(2));
+        System.out.println("multiplyByThree.multiply(1): " + multiplyByThree.multiply(1));
+        System.out.println("multiplyByFour.multiply(1): " + multiplyByFour.multiply(1));
     }
 }
