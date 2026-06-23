@@ -2,13 +2,12 @@ package Part4.OOP;
 
 public class MainOOP {
     public static void main (String[] args) {
-        Account matthewsAccount = new Account("Matthews account", 1000.00);
-        Account myAccount = new Account("My account", 0.0);
+        Whistle duckWhistle = new Whistle("Kvaak");
+        Whistle roosterWhistle = new Whistle("Peef");
 
-        matthewsAccount.withdraw(100.0);
-        myAccount.deposit(100.0);
+        duckWhistle.sound();
+        roosterWhistle.sound();
+        duckWhistle.sound();
 
-        System.out.println(matthewsAccount);
-        System.out.println(myAccount);
     }
 }
