@@ -2,20 +2,20 @@ package Part5.OOPProgramming.ObjectsAndReferences;
 
 public class Main {
     public static void main(String[] args) {
-        SimpleDate date = new SimpleDate(24, 3, 2017);
-        SimpleDate date2 = new SimpleDate(23, 7, 2017);
+        SimpleDate2 date = new SimpleDate2(13, 2, 2015);
+        System.out.println("Friday of the examined week is " + date);
 
-        PersonTwin leo = new PersonTwin("Leo", date, 62, 9);
-        PersonTwin lily = new PersonTwin("Lily", date2, 65, 8);
+        SimpleDate2 newDate = date.afterNumberOfDays(7);
+        int week = 1;
+        while (week <= 7) {
+            System.out.println("Friday after " + week + " weeks is " + newDate);
+            newDate = newDate.afterNumberOfDays(7);
 
-        if (leo.equals(lily)) {
-            System.out.println("Is this quite correct?");
+            week = week + 1;
         }
 
-        PersonTwin leoWithDifferentWeight = new PersonTwin("Leo", date, 62, 10);
 
-        if (leo.equals(leoWithDifferentWeight)) {
-            System.out.println("Is this quite correct?");
-        }
+        System.out.println("The date after 790 days from the examined Friday is ... try it out yourself!");
+        System.out.println(date.afterNumberOfDays(790));
     }
 }
