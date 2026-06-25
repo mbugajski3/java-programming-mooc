@@ -2,20 +2,20 @@ package Part5.OOPProgramming.ObjectsAndReferences;
 
 public class Main {
     public static void main(String[] args) {
-        SimpleDate2 date = new SimpleDate2(13, 2, 2015);
-        System.out.println("Friday of the examined week is " + date);
+        Money a = new Money(10,0);
+        Money b = new Money(5,0);
 
-        SimpleDate2 newDate = date.afterNumberOfDays(7);
-        int week = 1;
-        while (week <= 7) {
-            System.out.println("Friday after " + week + " weeks is " + newDate);
-            newDate = newDate.afterNumberOfDays(7);
+        Money c = a.plus(b);
 
-            week = week + 1;
-        }
+        System.out.println(a);  // 10.00e
+        System.out.println(b);  // 5.00e
+        System.out.println(c);  // 15.00e
 
+        a = a.plus(c);          // NB: a new Money object is created, and is placed "at the end of the strand connected to a"
+//  the old 10 euros at the end of the strand disappears and the Java garbage collector takes care of it
 
-        System.out.println("The date after 790 days from the examined Friday is ... try it out yourself!");
-        System.out.println(date.afterNumberOfDays(790));
+        System.out.println(a);  // 25.00e
+        System.out.println(b);  // 5.00e
+        System.out.println(c);  // 15.00e
     }
 }
