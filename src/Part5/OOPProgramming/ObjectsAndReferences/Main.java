@@ -2,11 +2,15 @@ package Part5.OOPProgramming.ObjectsAndReferences;
 
 public class Main {
     public static void main(String[] args) {
-        Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
-        Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
-        Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
+        Song jackSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
+        Song anotherSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
 
-        System.out.println(manhattanStudioApt.moreExpensiveThan(atlantaTwoBedroomApt));  // false
-        System.out.println(bangorThreeBedroomApt.moreExpensiveThan(atlantaTwoBedroomApt));   // true
+        if (jackSparrow.equals(anotherSparrow)) {
+            System.out.println("Songs are equal.");
+        }
+
+        if (jackSparrow.equals("Another object")) {
+            System.out.println("Strange things are afoot.");
+        }
     }
 }
