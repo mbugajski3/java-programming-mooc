@@ -41,4 +41,20 @@ public class Money {
     public boolean lessThan(Money compared) {
         return (this.euros < compared.euros);
     }
+
+    public Money minus(Money decreaser) {
+        int thisTotalCents = this.euros * 100 + this.cents;
+        int decreaserTotalCents = decreaser.euros * 100 + decreaser.cents;
+
+        int difference = thisTotalCents - decreaserTotalCents;
+
+        if (difference < 0) {
+            difference = 0;
+        }
+
+        int newEuros = difference / 100;
+        int newCents = difference % 100;
+
+        return new Money(newEuros, newCents);
+    }
 }
