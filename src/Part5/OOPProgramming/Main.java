@@ -2,10 +2,14 @@ package Part5.OOPProgramming;
 
 public class Main {
     public static void main (String[] args) {
-        Book book1 = new Book("J.K Rowling", "Harry Potter and the Sorcerer's stone", 223);
-        Book book2 = new Book("Franz Kafka", "Letters to Milena", 520);
+        Cube oSheaJackson = new Cube(4);
+        System.out.println(oSheaJackson.volume());
+        System.out.println(oSheaJackson);
 
-        System.out.println(book1);
-        System.out.println(book2);
+        System.out.println();
+
+        Cube salt = new Cube(2);
+        System.out.println(salt.volume());
+        System.out.println(salt);
     }
 }
