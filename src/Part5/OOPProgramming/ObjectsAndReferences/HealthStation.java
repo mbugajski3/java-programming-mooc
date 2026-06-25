@@ -1,0 +1,8 @@
+package Part5.OOPProgramming.ObjectsAndReferences;
+
+public class HealthStation {
+
+    public int weigh(Person person) {
+        return person.getWeight();
+    }
+}
