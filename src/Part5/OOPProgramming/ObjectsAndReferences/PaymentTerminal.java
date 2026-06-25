@@ -38,6 +38,31 @@ public class PaymentTerminal {
             return payment;
         }
     }
+    public boolean eatAffordably(PaymentCard card) {
+
+        double affordableMeal = 2.50;
+
+        if (card.balance() >= affordableMeal) {
+            this.affordableMeals++;
+            card.takeMoney(card.balance() - affordableMeal);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    public boolean eatHeartily(PaymentCard card) {
+
+        double heartyMeal = 4.30;
+
+        if (card.balance() > heartyMeal) {
+            heartyMeals++;
+            card.takeMoney(card.balance() - heartyMeal);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public String toString() {
         return "money: " + this.money + ", number of sold afforable meals: " + this.affordableMeals + ", number of sold hearty meals: " + this.heartyMeals;
