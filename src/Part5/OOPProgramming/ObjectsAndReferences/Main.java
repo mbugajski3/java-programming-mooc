@@ -2,9 +2,11 @@ package Part5.OOPProgramming.ObjectsAndReferences;
 
 public class Main {
     public static void main(String[] args) {
-        Pet lucy = new Pet("Lucy", "golden retriever");
-        PersonPetOwner leo = new PersonPetOwner("Leo", lucy);
+        Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
+        Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
+        Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
 
-        System.out.println(leo);
+        System.out.println(manhattanStudioApt.largerThan(atlantaTwoBedroomApt));       // false
+        System.out.println(bangorThreeBedroomApt.largerThan(atlantaTwoBedroomApt));
     }
 }
