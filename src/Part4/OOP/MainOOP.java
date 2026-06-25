@@ -1,5 +1,4 @@
 package Part4.OOP;
-import java.util.Scanner;
 
 public class MainOOP {
     public static void main (String[] args) {

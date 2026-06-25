@@ -1,4 +1,4 @@
-package Part4.OOP.ObjectsInList;
+package Part4.ObjectsInList;
 
 public class PersonalInformation {
 

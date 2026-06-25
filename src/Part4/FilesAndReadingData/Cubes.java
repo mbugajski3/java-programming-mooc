@@ -1,4 +1,4 @@
-package Part4.OOP.FilesAndReadingData;
+package Part4.FilesAndReadingData;
 import java.util.Scanner;
 
 public class Cubes {
