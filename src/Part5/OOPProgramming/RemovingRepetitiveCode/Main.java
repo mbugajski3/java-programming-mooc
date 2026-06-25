@@ -2,12 +2,19 @@ package Part5.OOPProgramming.RemovingRepetitiveCode;
 
 public class Main {
     public static void main (String[] args) {
-        Product tapeMeasure = new Product("Tape measure");
-        Product plaster = new Product("Plaster", "home improvement section");
-        Product tyre = new Product("Tyre", 5);
+        Counter counter = new Counter(20);
+        System.out.println(counter);
 
-        System.out.println(tapeMeasure);
-        System.out.println(plaster);
-        System.out.println(tyre);
+        counter.increase();
+        System.out.println(counter);
+
+        counter.decrease();
+        System.out.println(counter);
+
+        counter.increase(100);
+        System.out.println(counter);
+
+        counter.decrease(25);
+        System.out.println(counter);
     }
 }
