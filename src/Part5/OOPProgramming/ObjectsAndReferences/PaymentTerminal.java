@@ -44,7 +44,7 @@ public class PaymentTerminal {
 
         if (card.balance() >= affordableMeal) {
             this.affordableMeals++;
-            card.takeMoney(card.balance() - affordableMeal);
+            card.takeMoney(affordableMeal);
             return true;
         } else {
             return false;
@@ -57,10 +57,16 @@ public class PaymentTerminal {
 
         if (card.balance() > heartyMeal) {
             heartyMeals++;
-            card.takeMoney(card.balance() - heartyMeal);
+            card.takeMoney(heartyMeal);
             return true;
         } else {
             return false;
+        }
+    }
+    public void addMoneyToCard(PaymentCard card, double sum) {
+        if (sum > 0) {
+            card.addMoney(sum);
+            this.money = this.money + sum;
         }
     }
 
