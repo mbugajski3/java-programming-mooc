@@ -2,15 +2,20 @@ package Part5.OOPProgramming.ObjectsAndReferences;
 
 public class Main {
     public static void main(String[] args) {
-        Song jackSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
-        Song anotherSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
+        SimpleDate date = new SimpleDate(24, 3, 2017);
+        SimpleDate date2 = new SimpleDate(23, 7, 2017);
 
-        if (jackSparrow.equals(anotherSparrow)) {
-            System.out.println("Songs are equal.");
+        PersonTwin leo = new PersonTwin("Leo", date, 62, 9);
+        PersonTwin lily = new PersonTwin("Lily", date2, 65, 8);
+
+        if (leo.equals(lily)) {
+            System.out.println("Is this quite correct?");
         }
 
-        if (jackSparrow.equals("Another object")) {
-            System.out.println("Strange things are afoot.");
+        PersonTwin leoWithDifferentWeight = new PersonTwin("Leo", date, 62, 10);
+
+        if (leo.equals(leoWithDifferentWeight)) {
+            System.out.println("Is this quite correct?");
         }
     }
 }
