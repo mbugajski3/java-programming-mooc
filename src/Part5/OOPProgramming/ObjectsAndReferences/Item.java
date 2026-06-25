@@ -4,7 +4,7 @@ public class Item {
     private String itemIdentifier;
     private String itemName;
 
-    public Item(String itemName, String itemIdentifier) {
+    public Item(String itemIdentifier, String itemName) {
         this.itemIdentifier = itemIdentifier;
         this.itemName = itemName;
     }
@@ -20,8 +20,7 @@ public class Item {
 
         Item comparedItem = (Item) compared;
 
-        return (this.itemIdentifier.equals(comparedItem.itemIdentifier) &&
-                this.itemName.equals(comparedItem.itemName));
+        return (this.itemIdentifier.equals(comparedItem.itemIdentifier));
     }
 
     @Override

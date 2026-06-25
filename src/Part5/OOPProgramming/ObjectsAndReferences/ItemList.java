@@ -21,8 +21,10 @@ public class ItemList {
                 break;
             }
             Item item = new Item(inputIdentifier, inputName);
-            itemList.add(item);
 
+            if (!(itemList.contains(item))) {
+                itemList.add(item);
+            }
         }
         System.out.println("==Items==");
         for (Item item : itemList) {
