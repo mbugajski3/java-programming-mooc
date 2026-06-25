@@ -2,14 +2,14 @@ package Part5.OOPProgramming;
 
 public class Main {
     public static void main (String[] args) {
-        Cube oSheaJackson = new Cube(4);
-        System.out.println(oSheaJackson.volume());
-        System.out.println(oSheaJackson);
+        Fitbyte assistant = new Fitbyte(30, 60);
 
-        System.out.println();
+        double percentage = 0.5;
 
-        Cube salt = new Cube(2);
-        System.out.println(salt.volume());
-        System.out.println(salt);
+        while (percentage < 1.0) {
+            double target = assistant.targetHeartRate(percentage);
+            System.out.println("Target " + (percentage * 100) + "% of maximum: " + target);
+            percentage = percentage + 0.1;
+        }
     }
 }
