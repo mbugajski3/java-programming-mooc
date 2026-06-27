@@ -3,28 +3,22 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        MessagingService service = new MessagingService();
+        SimpleCollection s = new SimpleCollection("alphabet");
+        System.out.println(s);
 
-        Message first = new Message("Michael", "Hello, this is a short message.");
-        Message second = new Message("Adam", "This message should also be added.");
+        System.out.println();
 
-        String exactly280 = "a".repeat(280);
-        Message third = new Message("Anna", exactly280);
+        s.add("a");
+        System.out.println(s);
 
-        String tooLong = "b".repeat(281);
-        Message fourth = new Message("John", tooLong);
+        System.out.println();
 
-        service.add(first);
-        service.add(second);
-        service.add(third);
-        service.add(fourth);
+        s.add("b");
+        System.out.println(s);
 
-        ArrayList<Message> messages = service.getMessages();
+        System.out.println();
 
-        System.out.println("Number of accepted messages: " + messages.size());
-
-        for (Message message : messages) {
-            System.out.println(message);
-        }
+        s.add("c");
+        System.out.println(s);
     }
 }
