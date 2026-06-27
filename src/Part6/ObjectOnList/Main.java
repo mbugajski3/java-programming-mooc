@@ -3,13 +3,23 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        SimpleCollection j = new SimpleCollection("characters");
-        System.out.println("Longest: " + j.longest());
+        Room room = new Room();
+        room.add(new Person("Lea", 183));
+        room.add(new Person("Kenya", 182));
+        room.add(new Person("Auli", 186));
+        room.add(new Person("Nina", 172));
+        room.add(new Person("Terhi", 185));
 
-        j.add("magneto");
-        j.add("mystique");
-        j.add("phoenix");
+        System.out.println("");
+        for (Person person : room.getPersons()) {
+            System.out.println(person);
+        }
 
-        System.out.println("Longest: " + j.longest());
+        System.out.println();
+        System.out.println("Shortest: " + room.take());
+        System.out.println("");
+        for (Person person : room.getPersons()) {
+            System.out.println(person);
+        }
     }
 }
