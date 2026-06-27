@@ -39,4 +39,19 @@ public class SimpleCollection {
                     " elements: " + "\n" + elementsInCollection;
         }
     }
+
+    public String longest() {
+        if (this.elements.isEmpty()) {
+            return null;
+        }
+
+        String longestElement = this.elements.get(0);
+
+        for (String element : elements) {
+            if (element.length() > longestElement.length()) {
+                longestElement = element;
+            }
+        }
+        return longestElement;
+    }
 }
