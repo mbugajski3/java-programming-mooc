@@ -2,17 +2,15 @@ package Part6.ObjectOnList;
 
 public class Main {
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.addMeal("Tofu ratatouille");
-        menu.addMeal("Chilli coconut chicken");
-        menu.addMeal("Chilli coconut chicken");
-        menu.addMeal("Meatballs with mustard sauce");
+        Stack s = new Stack();
+        s.add("1");
+        s.add("2");
+        s.add("3");
+        s.add("4");
+        s.add("5");
 
-        menu.printMeals();
-        menu.clearMenu();
-
-        System.out.println();
-        menu.addMeal("Tomato and mozzarella salad");
-        menu.printMeals();
+        while (!s.isEmpty()) {
+            System.out.println(s.take());
+        }
     }
 }
