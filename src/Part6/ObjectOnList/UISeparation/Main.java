@@ -1,12 +1,11 @@
 package Part6.ObjectOnList.UISeparation;
 import java.util.Scanner;
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
+        ToDoList list = new ToDoList();
         Scanner scanner = new Scanner(System.in);
-        SimpleDictionary dictionary = new SimpleDictionary();
-        TextUI ui = new TextUI(scanner, dictionary);
+        UserInterface ui = new UserInterface(scanner, list);
         ui.start();
     }
 }
