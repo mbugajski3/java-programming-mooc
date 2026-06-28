@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class JokeManager {
 
-    private ArrayList<String> jokes;
+    private final ArrayList<String> jokes;
 
     public JokeManager() {
         this.jokes = new ArrayList<>();
