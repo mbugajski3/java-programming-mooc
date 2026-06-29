@@ -3,12 +3,22 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, String> names = new HashMap<>();
+        Abbreviations abbreviations = new Abbreviations();
+        abbreviations.addAbbreviation("e.g.", "for example");
+        abbreviations.addAbbreviation("etc.", "and so on");
+        abbreviations.addAbbreviation("i.e.", "more precisely");
 
-        names.put("Matthew", "Matt");
-        names.put("Michael", "Mix");
-        names.put("Arthur", "Artie");
+        String text = "e.g. i.e. etc. lol";
 
-        System.out.println(names.get("Matthew"));
+        for (String part: text.split(" ")) {
+            if(abbreviations.hasAbbreviation(part)) {
+                part = abbreviations.findExplanationFor(part);
+            }
+
+            System.out.print(part);
+            System.out.print(" ");
+        }
+
+        System.out.println();
     }
 }
