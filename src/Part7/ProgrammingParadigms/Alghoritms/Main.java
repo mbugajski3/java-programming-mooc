@@ -1,54 +1,59 @@
 package Part7.ProgrammingParadigms.Alghoritms;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Book> books = new ArrayList<>();
 
-        int[] numbers = {8, 3, 7, 9, 1};
-        Main.sort(numbers);
-        System.out.println(Arrays.toString(numbers));
-        // [1, 3, 7, 8, 9]
+        Book book1 = new Book(1, "Clean Code");
+        Book book2 = new Book(3, "Effective Java");
+        Book book3 = new Book(7, "Java Basics");
+        Book book4 = new Book(12, "Algorithms");
+        Book book5 = new Book(20, "Spring Boot Guide");
 
-        String[] words = {"banana", "apple", "pear"};
-        Main.sort(words);
-        System.out.println(Arrays.toString(words));
-        // [apple, banana, pear]
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+        books.add(book4);
+        books.add(book5);
 
-        ArrayList<Integer> integers = new ArrayList<>();
-        integers.add(8);
-        integers.add(3);
-        integers.add(7);
-
-        Main.sortIntegers(integers);
-        System.out.println(integers);
-        // [3, 7, 8]
-
-        ArrayList<String> strings = new ArrayList<>();
-        strings.add("banana");
-        strings.add("apple");
-        strings.add("pear");
-
-        Main.sortStrings(strings);
-        System.out.println(strings);
-        // [apple, banana, pear]
-
+        System.out.println(linearSearch(books, 1));   // expected: 0
+        System.out.println(linearSearch(books, 7));   // expected: 2
+        System.out.println(linearSearch(books, 20));  // expected: 4
+        System.out.println(linearSearch(books, 999)); // expected: -1
     }
 
-    public static void sort(int[] array) {
-        Arrays.sort(array);
+    public static int linearSearch(ArrayList<Book> books, int searchedId) {
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getId() == searchedId) {
+                return i;
+            }
+        }
+        return -1;
     }
 
-    public static void sort(String[] array) {
-        Arrays.sort(array);
-    }
+    public static int binarySearch(ArrayList<Book> books, int searchedId) {
+        int begin = 0;
+        int end = books.size() - 1;
 
-    public static void sortIntegers(ArrayList<Integer> integers) {
-        Collections.sort(integers);
-    }
+        while(begin > end) {
+            int middle = (end + begin / 2);
+            int middleId = books.get(middle).getId();
 
-    public static void sortStrings(ArrayList<String> strings) {
-        Collections.sort(strings);
+            if (middleId == searchedId) {
+                return middle;
+            }
+
+            if (middleId < searchedId) {
+                begin = middle + 1;
+            }
+
+            if (middleId > searchedId) {
+                end = middle - 1;
+            }
+        }
+
+        return -1;
     }
 }
