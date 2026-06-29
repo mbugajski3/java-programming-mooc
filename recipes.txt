@@ -1,0 +1,3 @@
+Pancake dough, cooking time: 60
+Meatballs, cooking time: 20
+Tofu rolls, cooking time: 30
