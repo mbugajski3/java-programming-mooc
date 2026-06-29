@@ -1,3 +1,5 @@
+package Part7.ProgrammingParadigms;
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +7,7 @@ public class Main {
         Container container1 = new Container();
         Container container2 = new Container();
         Scanner scanner = new Scanner(
-        "add 80\n" +
+"add 80\n" +
                 "move 30\n" +
                 "add 70\n" +
                 "move 90\n" +

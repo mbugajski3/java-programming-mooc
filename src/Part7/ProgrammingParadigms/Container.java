@@ -1,3 +1,5 @@
+package Part7.ProgrammingParadigms;
+
 public class Container {
 
     private int amount;

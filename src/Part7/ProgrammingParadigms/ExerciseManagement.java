@@ -1,3 +1,5 @@
+package Part7.ProgrammingParadigms;
+
 import java.util.ArrayList;
 
 public class ExerciseManagement {

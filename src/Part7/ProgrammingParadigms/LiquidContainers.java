@@ -1,71 +1,60 @@
 package Part7.ProgrammingParadigms;
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LiquidContainers {
-    public static void main(String[] args) {
-        int first = 0;
-        int second = 0;
-        int amountToMove = 0;
 
-        Scanner scanner = new Scanner("add 1000\n" + "move 50\n" + "add 100\n" + "move 100\n"  + "quit");
+    private Scanner scanner;
+    private Container container1;
+    private Container container2;
 
+    public LiquidContainers(Scanner scanner, Container container1, Container container2) {
+        this.scanner = scanner;
+        this.container1 = container1;
+        this.container2 = container2;
+
+    }
+
+    public void start() {
         while (true) {
-            System.out.println("First: " + first + "/100");
-            System.out.println("Second: " + second + "/100");
+            System.out.println("First: " + this.container1);
+            System.out.println("Second: " + this.container2);
             System.out.println();
-            String inputCommand = scanner.nextLine().trim().toLowerCase();
+            String inputCommand = this.scanner.nextLine().trim().toLowerCase();
 
-            if (!(inputCommand.isEmpty())) {
-
-                if (inputCommand.equals("quit")) {
-                    break;
-                }
-                String[] commandToParts = inputCommand.split(" ");
-                String command = commandToParts[0];
-                int amount = Integer.valueOf(commandToParts[1]);
-
-                if (command.equals("add")) {
-                    if ((first + amount) > 100 && amount > 0) {
-                        first = 100;
-                    } else {
-                        first = first + amount;
-                    }
-
-                } else if (command.equals("move")) {
-                    if (amount > 0) {
-                        if (amount > first) {
-                            amountToMove = first;
-                        } else {
-                            amountToMove = amount;
-                        }
-
-                        first = first - amountToMove;
-
-                        if (second + amountToMove > 100) {
-                            second = 100;
-                        } else {
-                            second = second + amountToMove;
-                        }
-                    }
-
-                } else if (command.equals("remove")) {
-                    if (amount > 0) {
-                        if ((second - amount) < 0) {
-                            second = 0;
-                        } else {
-                            second = second - amount;
-                        }
-                    } else {
-                        System.out.println("Number cannot be negative.");
-                    }
-
-                } else {
-                    System.out.println("Unknown command.");
-                }
-            } else {
+            if (inputCommand.equals("quit")) {
                 break;
             }
+            if (!(inputCommand.isEmpty())) {
+                String[] commandSplit = inputCommand.split(" ");
+                String command = commandSplit[0];
+                int value = Integer.valueOf(commandSplit[1]);
+
+                if (command.equals("add")) {
+                    container1.add(value);
+
+                } else if (command.equals("remove")) {
+                    container2.remove(value);
+
+                } else if (command.equals("move")) {
+                    move(value);
+                }
+            }
+        }
+    }
+
+    public void move(int amount) {
+        if (amount > 0) {
+            int amountToMove;
+
+            if (amount > container1.contains()) {
+                amountToMove = container1.contains();
+            } else {
+                amountToMove = amount;
+            }
+
+            container1.remove(amountToMove);
+            container2.add(amountToMove);
         }
     }
 }
