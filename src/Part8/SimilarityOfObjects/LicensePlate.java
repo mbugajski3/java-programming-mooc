@@ -25,6 +25,7 @@ public class LicensePlate {
             return false;
         }
 
+
         LicensePlate plate = (LicensePlate) compared;
 
         return (this.liNumber.equals(plate.liNumber) &&
