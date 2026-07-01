@@ -1,24 +1,26 @@
 package Part8.Recap.HashMap;
+
 import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        ProductPrices prices = new ProductPrices();
+        CategoryRegister register = new CategoryRegister();
 
-        prices.addProduct("milk", 4.99);
-        prices.addProduct("bread", 3.50);
-        prices.addProduct("cheese", 12.99);
-        prices.addProduct("milk", 5.49);
+        register.addProduct("fruit", "apple");
+        register.addProduct("fruit", "banana");
+        register.addProduct("drink", "water");
+        register.addProduct("drink", "coffee");
+        register.addProduct("meat", "chicken");
 
-        System.out.println(prices.getPrice("milk"));
-        System.out.println(prices.getPrice("bread"));
-        System.out.println(prices.getPrice("unknown"));
+        System.out.println(register.getProducts("fruit"));
+        System.out.println(register.getProducts("drink"));
+        System.out.println(register.getProducts("unknown"));
 
-        System.out.println(prices.hasProduct("cheese"));
-        System.out.println(prices.hasProduct("butter"));
+        System.out.println(register.hasCategory("meat"));
+        System.out.println(register.hasCategory("vegetables"));
 
-        System.out.println(prices.isExpensive("cheese"));
-        System.out.println(prices.isExpensive("milk"));
-        System.out.println(prices.isExpensive("butter"));
+        System.out.println(register.amountOfProducts("fruit"));
+        System.out.println(register.amountOfProducts("unknown"));
     }
 }
+
