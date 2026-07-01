@@ -3,22 +3,22 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
+        ProductPrices prices = new ProductPrices();
 
-        WordCounter counter = new WordCounter();
+        prices.addProduct("milk", 4.99);
+        prices.addProduct("bread", 3.50);
+        prices.addProduct("cheese", 12.99);
+        prices.addProduct("milk", 5.49);
 
-        counter.addWord("java");
-        counter.addWord("java");
-        counter.addWord("map");
-        counter.addWord("code");
-        counter.addWord("code");
-        counter.addWord("code");
+        System.out.println(prices.getPrice("milk"));
+        System.out.println(prices.getPrice("bread"));
+        System.out.println(prices.getPrice("unknown"));
 
-        System.out.println(counter.timesAdded("java"));
-        System.out.println(counter.timesAdded("map"));
-        System.out.println(counter.timesAdded("code"));
-        System.out.println(counter.timesAdded("python"));
+        System.out.println(prices.hasProduct("cheese"));
+        System.out.println(prices.hasProduct("butter"));
 
-        System.out.println(counter.hasWord("java"));
-        System.out.println(counter.hasWord("python"));
+        System.out.println(prices.isExpensive("cheese"));
+        System.out.println(prices.isExpensive("milk"));
+        System.out.println(prices.isExpensive("butter"));
     }
 }
